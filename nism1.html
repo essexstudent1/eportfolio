@@ -64,7 +64,29 @@
 																
 									<div class="box">
 										<h3>Initial Post</h3>	
-																		
+										<p>Glisson et. al. (2015) explain that cyber attacks against medical devices have been accelerating, and they describe their experiments with attempting to compromise a medical training mannequin to determine if these devices are vulnerable to attack. In this post, we will explore the threats and vulnerabilities discussed in their report and how these might be mitigated. A threat is something or someone that could cause a security incident, and a vulnerability is a control weakness or gap that could be exploited by a threat (Campbell, 2016).</p>
+
+										<p>In their paper, Glisson et. al. do not describe any actual threats that may wish to cause a security incident with respect to the medical mannequin. At most they mention that the FBI and other groups have released notifications about threats to medical devices, but beyond this they focus only on vulnerabilities. The two specific vulnerabilities explored in the paper are weaknesses in Wi-Fi Protected Setup (WPS) and susceptibility to denial of service attacks.</p>
+
+										<p>The iStan medical mannequin has its own wireless network access port which implements WPS. Viehböck (2011) explains that WPS suffers from two design flaws which makes it vulnerable to brute force attacks. Glisson et. al. used the Reaver security testing tool to successfully compromise the iStan in both physical and virtual modes using this attack method. Mitigating this vulnerability is very difficult. Viehböck recommends disabling WPS. However, WPS is implemented within the iStan’s device firmware and presumably required for the proper functioning of the device which makes it impossible to disable without re-engineering. Additionally because the iStan has its own built-in wireless access point, users are unable to implement traditional network security controls such as firewalls. The best mitigation in this case may be to keep attackers from getting within radio range of the device’s wireless access point. Reception areas, physical access and identity management, and alarms and sensors may be the most appropriate controls to secure building interiors and therefore the computing devices within (Campbell, 2016).</p>
+
+										<p>In addition to the WPS vulnerability, Glisson et. al. used a tool called MDK3 to demonstrate that the iStan is susceptible to denial of service attacks. MDK3 was designed to perform stress tests and penetration tests against wireless networks (Sankar, 2018). Wireless denial of service attacks are extremely difficult to prevent, and as a result the best mitigation may be to deploy a wireless intrusion detection system (TechTarget, 2009). A wireless intrusion detection system should be able to detect wireless denial of service attacks and alert cybersecurity teams who can then investigate, locate, and eradicate the threat.</p>
+
+
+
+<h4>References</h4>
+
+<p>Campbell, Tony. (2016) Practical Information Security Management. New York: Apress.</p>
+
+<p>Glisson, W., Andel, T., McDonald, T., Jacobs, M., Campbell, M. & Mayr, J. (2015) Compromising a Medical Mannequin. Healthcare Information Systems and Technology (Sighealth).</p>
+
+<p>Sankar, Ravi. (2018). WiFi Stress Testing Using MDK3, Beacon Flooding & Deauthentication Attack. Available at: https://kalilinuxtutorials.com/mdk3/#:~:text=MDK3%20is%20a%20proof%20of,deauthentication%2C%20WPA%2D%20dos%20etc. [Accessed 14 March 2022]</p>
+
+<p>TechTarget. (2009). How to prevent wireless DoS attacks. Available at: https://www.techtarget.com/searchsecurity/feature/How-to-prevent-wireless-DoS-attacks [Accessed 14 March 2022]</p>
+
+<p>Viehböck, Stefan. (2011) Brute forcing Wi-Fi Protected Setup. Available at: https://sviehb.files.wordpress.com/2011/12/viehboeck_wps.pdf. [Accessed 14 March 2022]</p>
+
+								
 									</div>
 									
 								</div>
