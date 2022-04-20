@@ -56,65 +56,119 @@
 									<h2>Collaborative Learning Discussion 2 - Part 2</h2>
 									<p>Considering what you have now learned in both units, you should respond to at least two of your peers' contributions. </p>
 
-                  <h3>Summary Post</h3>
+                  <h3>Peer Response 1</h3>
+									<p>This post was in response to https://www.my-course.co.uk/mod/hsuforum/discuss.php?d=303724</p>
                  																
 									<div class="box">
 																				
-                    <p>The problem with wireless security is not an academic one. For instance in 2018, shortly after the attempted 
-assassination of an ex-Russan spy in Salisbury involving the use of the nerve agent novichok, four Russian GRU 
-agents were discovered attempting to hack into the headquarters of the Organization for the Prohibition of 
-Chemical Weapons in The Hague (Greenberg, 2018). The spies had parked a rental car just outside the building, 
-filled with sophisticated technical equipment designed to snoop on wi-fi traffic and to spoof a legitimate
- wireless access point in order to carry out a man-in-the-middle attack. </p>
-
-<p>Indeed, hackers need not even have to drive a car. The proliferation of consumer drones has opened up a whole
- new threat vector for wireless attacks. Barker (2020) describes research done to show how an inexpensive drone
-  can be fitted with a directional wi-fi antenna and wireless hacking tools. Such a drone could be used to
-   compromise wireless networks even within physically secure buildings, with the attackers themselves 
-   potentially a mile or more away.</p>
-
-<p>Unfortunately, protecting against wireless attacks is very difficult, as demonstrated by our recent
- collaborative discussion of the proof of concept attacks which Glisson et. al. (2015) carried out
-  against a medical mannequin. Many students, such as Ashmore (2022), recommended the use of network
-   firewalls as a mitigation. However in order to mitigate threats, network firewalls need to be located 
-   on a network between the attacker and the target (Campbell, 2016), which would render them ineffective
-    against a wireless attack on a device with a built in wi-fi access point like the iStan. One interesting 
-    proposal was the use of built-in signal jamming technology in medical devices which could block wireless 
-    connections (Ahmad, 2022). Such a solution, though, may defeat the purpose of wireless connectivity.
+                    <p>Hi Jurbe. Thank you for the great post. I was very interested to hear that one of your group members had a
+ latency delay of over 400ms at hop 2. Usually the first hop in a traceroute is from the local computer 
+ to the local router, and hop 2 is the connection to the Internet Service Provider (Mitchell, 2014).
+  This would mean that the high latency is likely a result of the Internet connection type used by this individual.
+   According to Christiansen (2021), only satelite Internet connections tend to have latency over 400ms. 
 </p>
-<p>A more promising solution may be the use of mandatory design standards for the security of medical devices.
- Tolofari (2022) points out that there are already international standards for medical devices but these are
-  quite old and do not adequately cover cybersecurity. Fortunately in recent years there has been a focus
-   on developing new design guidelines for network connected devices including medical devices (Fagan et. al., 2020).
-    At this time these guidelines remain voluntary, so the next step should be to build them into a new 
-    international standard for cybersecurity design that would be mandatory for all critical medical devices.
-</p>
+<p>I would be interested to know if you determined the Internet connection type used by this individual,
+ and whether you think that different connection types might affect security scans.</p>
+
 
 
 <h3>References</h3>
 
-<p>Ahmad, Ali. (2022) Initial Post. Available at: https://www.my-course.co.uk/mod/hsuforum/discuss.php?d=300061 (Accessed: 24 March 2022).</p>
+<p>Christiansen, Peter. 2021. What Is Latency? | SatelliteInternet.com. Available at:
+ https://www.satelliteinternet.com/resources/what-is-internet-latency/ (Accessed: 9 April 2022).</p>
 
-<p>Ashmore, Jonathan. (2022) Initial Post. Available at: https://www.my-course.co.uk/mod/hsuforum/discuss.php?d=299733 (Accessed: 24 March 2022).</p>
-
-<p>Barker, Nathan V. 2018. Development of a Drone-Mounted Wireless Attack Platform. Available at: https://scholar.afit.edu/etd/3224 (Accessed: 24 March 2022).</p>
-
-<p>Campbell, Tony. 2016. Practical Information Security Management. Apress: New York</p>
-
-<p>Fagan, M., Megas, K.N., Scarfone, K., Smith, M. 2020. Foundational Cybersecurity Activities for IoT Device Manufacturers. NIST. Available at: https://nvlpubs.nist.gov/nistpubs/ir/2020/NIST.IR.8259.pdf</p>
-
-<p>Gilsson, W., Mcdonald, T., Campbell, M., Andel, T., Jacobs, M. & Mayr, J. (2015) Compromising a Medical Mannequin Available from: https://www.researchgate.net/publication/281487935_Compromising_a_Medical_Mannequin/figures?lo=1 [Accessed 12March 2022]</p>
-
-<p>Greenberg, Andy. (2018) How Russian Spies Infiltrated Hotel Wi-Fi to Hack Victims, Wired. Available at: https://www.wired.com/story/russian-spies-indictment-hotel-wi-fi-hacking/ (Accessed: 24 March 2022).</p>
-
-<p>Tolofari, Osarodion S. (2022) Initial Post. Available at: https://www.my-course.co.uk/mod/hsuforum/discuss.php?d=300554 (Accessed: 26 March 2022).</p>
-
+<p>Mitchell, Scott. (2014) How to Read a Traceroute, InMotion Hosting Support Center. Available at:
+ https://www.inmotionhosting.com/support/server/ssh/read-traceroute/ (Accessed: 9 April 2022).</p>
                     
                     
 									</div>
                   
-                  
-                  
+                   <h3>Peer Response 2</h3>
+									<p>This post was in response to https://www.my-course.co.uk/mod/hsuforum/discuss.php?d=303407</p>
+                 																
+									<div class="box">
+										
+										<p>Hi Elizabeth. I enjoyed your post. I found it particularly interesting that you were able to determine
+ that the name servers for the site are actually hosted by "Cloudflaranet" rather than by a2hosting.com,
+  which is what we would expect based on the nameserver domain names (Parziale et. al., 2006). In that regard,
+   I believe that you took your research a step further than our group did.</p>
+
+<p>However, I do want to suggest that if you had taken your research one additional step, you may have
+ reconsidered your thoughts about the redundancy of the nameservers. Cloudflaranet is actually the
+  company Cloudflare which, according to Williams (2022) is a very popular content delivery network (CDN)
+  . A CDN works by caching files from websites and distributing the data across the globe. This results
+   in faster access times, but also creates additional redundancy. Cloudflare claims that their DNS system
+    provides "unparalleled redundancy" (Cloudflare, 2019).</p>
+										
+						<h3>Reponse to Peer Response 1</h3>
+									<p>In addition to the peer responses, I also responded to two peer responses to our group post at https://www.my-course.co.uk/mod/hsuforum/discuss.php?d=303719</p>
+                 																
+									<div class="box">				
+
+										<p>Hi Andrijana and thank you for the response. To help explain my rationale for arguing that the site is in Amsterdam,
+ it is helpful to look at the results of my tracepath:</p>
+
+<pre>1?: [LOCALHOST] pmtu 1500
+
+ 1:  _gateway (192.168.68.1)                               4.235ms 
+ 1:  _gateway (192.168.68.1)                               6.082ms 
+ 2:  DeviceDHCP.Home (192.168.1.1)                         7.360ms 
+ 3:  192.24.36.1 (192.24.36.1)                             9.825ms 
+ 4:  pkt.64.235.packetworks.net (64.235.104.200)          10.543ms 
+ 5:  pkt.64.235.packetworks.net (64.235.104.6)            11.186ms 
+ 6:  hu0-5-0-2.ccr32.yyz02.atlas.cogentco.com (38.122.69.145)  11.235ms 
+ 7:  be3260.ccr22.ymq01.atlas.cogentco.com (154.54.42.90)  16.955ms 
+ 8:  be3043.ccr22.lpl01.atlas.cogentco.com (154.54.44.165)  87.782ms 
+ 9:  be2183.ccr42.ams03.atlas.cogentco.com (154.54.58.70)  97.440ms 
+10:  be2283.rcr21.b038092-0.ams03.atlas.cogentco.com (130.117.51.14)  98.533ms 
+1?: [LOCALHOST] pmtu 1500
+
+ 1:  _gateway (192.168.68.1)                               4.235ms 
+ 1:  _gateway (192.168.68.1)                               6.082ms 
+ 2:  DeviceDHCP.Home (192.168.1.1)                         7.360ms 
+ 3:  192.24.36.1 (192.24.36.1)                             9.825ms 
+ 4:  pkt.64.235.packetworks.net (64.235.104.200)          10.543ms 
+ 5:  pkt.64.235.packetworks.net (64.235.104.6)            11.186ms 11:  euroaccess-ltd.demarc.cogentco.com (149.6.128.82)    97.116ms 
+12:  v402.R2.NL1.a2webhosting.com (209.124.94.239)       106.195ms 
+13:  68.66.247.187.static.a2webhosting.com (68.66.247.187)  95.828ms reached</pre>
+
+<p>Internet providers often use IATA airport codes to identify the geographic location of routers on their network 
+(Lamberti, 2020). In the tracepath, you can see that my local Internet Service Provider hands off my packets at 
+hop 6 to Cogent Communications. Cogent clearly uses IATA codes, so you can read the path from hop 6 in Toronto
+ (YYZ) to hop 7 in Montreal (YMQ) to hop 8 in Liverpool (LPL) to hop 9 in Amsterdam (AMS). At that point,
+  Cogent hands the packets off to A2 Hosting for the last mile to our target server. If the packets continued
+   back from Amsterdam to the USA, we would see additional hops after that.</p>
+
+<p>It is also important to note that my longest delay occurs between 7 and 8, which is a trans-Atlantic 
+hop from Montreal to Liverpool. Routing on the Internet is controlled by the Border Gateway Protocol 
+(BGP). BGP uses many different factors to select a routing path, but generally speaking it tries to select 
+the shortest, fastest, and/or most efficient route (IPXO, 2022). If the site really is in the USA, it would
+ be illogical for my packets to go from Canada to the UK to the Netherlands, and then back across the ocean
+  to the USA. </p>
+
+
+
+<h3>References</h3>
+
+<p>IPXO. 2022. What is BGP? The Complete Guide to Border Gateway Protocol. Available at: https://www.ipxo.com/tutorial/what-is-bgp/ (Accessed: 9 April 2022).</p>
+
+<p>Lamberti, Alyssa. 2020. Decode the Hidden Information from Traceroute DNS (2020). Available at: https://medium.com/obkio/decode-the-hidden-information-from-traceroute-dns-ecee10e4b3d1 (Accessed: 9 April 2022).</p>
+
+
+										
+										
+
+
+<h3>References</h3>
+
+<p>Cloudflare. 2019. Leveraging DNS to Build Reliable Digital Experiences Available at: https://www.cloudflare.com/static/610d40f37f1d40925fe5acb1d6f90cef/BDES-361_DNS_whitepaper_0220_final.pdf  [Accessed 9 April 2022]</p>
+
+<p>Parziale, L., Britt, D., Davis, C., Forrester, J., Lui, W., Matthews, C. & Rosselot, N. (2006) TCP/IP Tutorial And Technical Overview. 8th ed. New York: IBM.</p>
+
+<p>Williams, Mike. 2022. Best CDN providers of 2022 to speed up any website. Available at: https://www.techradar.com/news/best-cdn-providers [Accessed: 9 April 2022].</p>
+										
+										
+                  </div>
                   
 
 									<h2>Team Assignment</h2>
