@@ -100,6 +100,17 @@
    in faster access times, but also creates additional redundancy. Cloudflare claims that their DNS system
     provides "unparalleled redundancy" (Cloudflare, 2019).</p>
 										
+										<h3>References</h3>
+
+<p>Cloudflare. 2019. Leveraging DNS to Build Reliable Digital Experiences Available at: https://www.cloudflare.com/static/610d40f37f1d40925fe5acb1d6f90cef/BDES-361_DNS_whitepaper_0220_final.pdf  [Accessed 9 April 2022]</p>
+
+<p>Parziale, L., Britt, D., Davis, C., Forrester, J., Lui, W., Matthews, C. & Rosselot, N. (2006) TCP/IP Tutorial And Technical Overview. 8th ed. New York: IBM.</p>
+
+<p>Williams, Mike. 2022. Best CDN providers of 2022 to speed up any website. Available at: https://www.techradar.com/news/best-cdn-providers [Accessed: 9 April 2022].</p>
+										
+										
+                  </div>
+										
 						<h3>Reponse to Peer Response 1</h3>
 									<p>In addition to the peer responses, I also responded to two peer responses to our group post at https://www.my-course.co.uk/mod/hsuforum/discuss.php?d=303719</p>
                  																
@@ -108,7 +119,8 @@
 										<p>Hi Andrijana and thank you for the response. To help explain my rationale for arguing that the site is in Amsterdam,
  it is helpful to look at the results of my tracepath:</p>
 
-<pre>1?: [LOCALHOST] pmtu 1500
+<pre>
+1?: [LOCALHOST] pmtu 1500
 
  1:  _gateway (192.168.68.1)                               4.235ms 
  1:  _gateway (192.168.68.1)                               6.082ms 
@@ -121,16 +133,11 @@
  8:  be3043.ccr22.lpl01.atlas.cogentco.com (154.54.44.165)  87.782ms 
  9:  be2183.ccr42.ams03.atlas.cogentco.com (154.54.58.70)  97.440ms 
 10:  be2283.rcr21.b038092-0.ams03.atlas.cogentco.com (130.117.51.14)  98.533ms 
-1?: [LOCALHOST] pmtu 1500
-
- 1:  _gateway (192.168.68.1)                               4.235ms 
- 1:  _gateway (192.168.68.1)                               6.082ms 
- 2:  DeviceDHCP.Home (192.168.1.1)                         7.360ms 
- 3:  192.24.36.1 (192.24.36.1)                             9.825ms 
- 4:  pkt.64.235.packetworks.net (64.235.104.200)          10.543ms 
- 5:  pkt.64.235.packetworks.net (64.235.104.6)            11.186ms 11:  euroaccess-ltd.demarc.cogentco.com (149.6.128.82)    97.116ms 
+11:  euroaccess-ltd.demarc.cogentco.com (149.6.128.82)    97.116ms 
 12:  v402.R2.NL1.a2webhosting.com (209.124.94.239)       106.195ms 
-13:  68.66.247.187.static.a2webhosting.com (68.66.247.187)  95.828ms reached</pre>
+13:  68.66.247.187.static.a2webhosting.com (68.66.247.187)  95.828ms reached
+
+</pre>
 
 <p>Internet providers often use IATA airport codes to identify the geographic location of routers on their network 
 (Lamberti, 2020). In the tracepath, you can see that my local Internet Service Provider hands off my packets at 
@@ -154,90 +161,210 @@ the shortest, fastest, and/or most efficient route (IPXO, 2022). If the site rea
 
 <p>Lamberti, Alyssa. 2020. Decode the Hidden Information from Traceroute DNS (2020). Available at: https://medium.com/obkio/decode-the-hidden-information-from-traceroute-dns-ecee10e4b3d1 (Accessed: 9 April 2022).</p>
 
+</div>
+									
+									
+					<h3>Reponse to Peer Response 2</h3>
+									<p>In addition to the peer responses, I also responded to two peer responses to our group post at https://www.my-course.co.uk/mod/hsuforum/discuss.php?d=303719</p>
+                 																
+									<div class="box">				
+									
+									<p>Hi Jurbe. </p>
 
-										
-										
+<p>Zorz (2019) describes how cognitive biases can undermine cybersecurity programs. Particularly relevant 
+for this topic is anchoring and confirmation bias. Anchoring bias describes our tendency to accept the 
+first piece of information that we come across as the absolute truth, and confirmation bias describes 
+our tendency to only look for evidence that fits our theories. In this situation, I cannot help but feel 
+that a number of people have performed a web-based IP address geolocation on the site and have 'anchored' 
+Zorz (2019) describes how cognitive biases can undermine cybersecurity programs. Particularly relevant 
+for this topic is anchoring and confirmation bias. Anchoring bias describes our tendency to accept the 
+first piece of information that we come across as the absolute truth, and confirmation bias describes onto the result that the site should be in the USA. Confirmation bias has then prevented them from critically
+ examining this anchor, and instead caused them to look only for data that supports this theory.</p>
+
+<p>To address your specific point, Yacobi-Keller, et. al. (2009) describe how IP addresses associated with 
+a single autonomous system (AS) need not be in a single country or even a single continent. </p>
+
 
 
 <h3>References</h3>
 
-<p>Cloudflare. 2019. Leveraging DNS to Build Reliable Digital Experiences Available at: https://www.cloudflare.com/static/610d40f37f1d40925fe5acb1d6f90cef/BDES-361_DNS_whitepaper_0220_final.pdf  [Accessed 9 April 2022]</p>
+<p>Yacobi-Keller, U., Savin, E., Fabian, B., and Ermakova, E. (2009) Towards geographical analysis of the autonomous system network. Available at: https://www.researchgate.net/publication/321183657_Towards_Geographical_Analysis_of_the_Autonomous_System_Network (Accessed 11 April 2022)</p>
 
-<p>Parziale, L., Britt, D., Davis, C., Forrester, J., Lui, W., Matthews, C. & Rosselot, N. (2006) TCP/IP Tutorial And Technical Overview. 8th ed. New York: IBM.</p>
-
-<p>Williams, Mike. 2022. Best CDN providers of 2022 to speed up any website. Available at: https://www.techradar.com/news/best-cdn-providers [Accessed: 9 April 2022].</p>
+<p>Zorz, Zeljka. (2019) How human bias impacts cybersecurity decision making - Help Net Security. Available at: https://www.helpnetsecurity.com/2019/06/10/cybersecurity-decision-making/ (Accessed: 11 April 2022).</p>
+									
+									
 										
 										
-                  </div>
+
+
+										
+										
+										</div>
+
                   
 
 									<h2>Team Assignment</h2>
 
-<p>Using your assigned website, carry out the following exercises reporting on the questions listed below.</p>
+<p>Read the blog post in preparation for this week’s seminar - “Geer, D. (2015) 8 Penetration Testing Tools 
+That Will Do the Job. (Network World)"</p>
 
-<p>Perform a basic scan using standard tools such as traceroute (not ICMP version). Use these basic
- tools to compile a list that details the following information:
-</p>
-<ul><li>How many hops from your machine to your assigned website?</li>
-<li>Which step causes the biggest delay in the route? What is the average duration of that delay?</li>
-<li>What are the main nameservers for the website?</li>
-<li>Who is the registered contact?</li>
-<li>What is the MX record for the website?</li>
-<li>Where is the website hosted?</li></ul>
+<ul><li>Evaluate the tools discussed therein against the criteria: ease of install, ease of use, flexibility, licensing, privacy, reputation.</li>
+<li>Rate each tool on a scale of 1-5, 5 being the most popular/ highest score.</li>
+<li>Which tool gets the highest rating according to your evaluation?</li></ul>
+
+<p>Discuss your results with your team and be ready to discuss them in the seminar.</p>
                   
                   
 									<div class="box">
 										
+                    <h3>TEAM SCORES</h3>
+
+<table><tr><th>Tool</th>
+<th>Ease of install</th>
+<th>Ease of use</th>
+<th>Flexibility</th>
+<th>Licensing</th>
+<th>Reputation</th>
+<th>Privacy</th>
+<th>TOTAL</th>
+</tr>
+<tr><td>Metasploit</td>
+<td>5</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>3</td>
+<td>24</td>
+</tr>
+<tr><td>Nessus Vulnerability Scanner</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>2</td>
+<td>4</td>
+<td>5</td>
+<td>23</td>
+</tr>
+<tr><td>Nmap</td>
+<td>5</td>
+<td>3</td>
+<td>3</td>
+<td>5</td>
+<td>5</td>
+<td>3</td>
+<td>24</td>
+</tr>
+<tr><td>Burp Suite</td>
+<td>5</td>
+<td>3</td>
+<td>4</td>
+<td>2</td>
+<td>5</td>
+<td>5</td>
+<td>24</td>
+</tr>
+<tr><td>OWASP ZAP</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>3</td>
+<td>28</td>
+</tr>
+<tr><td>SQLmap</td>
+<td>4</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>4</td>
+<td>4</td>
+<td>24</td>
+</tr>
+<tr><td>Kali Linux</td>
+<td>3</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>5</td>
+<td>3</td>
+<td>23</td>
+</tr>
+<tr><td>Jawfish</td>
+<td>5</td>
+<td>3</td>
+<td>3</td>
+<td>5</td>
+<td>3</td>
+<td>3</td>
+<td>22</td>
+</tr>
+</table>
+
+<h4>Metasploit</h4>
+<ul><li>Easy to install (just lots of next for windows, and for kali linux it’s just a command line)</li>
+<li>Ease of use - you just call the function, set destination and the host</li>
+<li>Flexibility - scan, build virus, password crackers, DOS, etc. Supports many OS. High risk because it makes the machine vulnerable. </li>
+<li>Licensing - open source, some libraries or sources are inbuilt and they are sold on dark web. About 20-10% of libraries, sources are charged.</li>
+<li>Reputation - the tool is well known for a long time. It is good for offensive hacking/pen testing. The companies do not use it publicly as it’s a dangerous tool.</li>
+<li>Privacy - Hamad thinks that it is hard to prove that the software is not sharing any of your machine data during the scans. </li></ul>
+
+<h4>Nessus</h4>
+<ul><li>Ease of install - easy to install.</li>
+<li>Ease of use - you set up the host name/IP and scan.</li>
+<li>Flexibility - extra steps to go through if you have cloud deployments. It’s more difficult to customise</li>
+<li>Licensing - they charge, but they offer a trial month (with limited reports).</li>
+<li>Reputation - known tool. </li>
+<li>Privacy - privacy documents in place to ensure your data is secure.</li></ul>
+
+<h4>Nmap</h4>
+<ul><li>Ease of install - easy.</li>
+<li>Ease of use - CLI based, it’s harder to use because you need to know the commands.</li>
+<li>Flexibility - not customisable.</li>
+<li>Licensing - free.</li>
+<li>Reputation - very well know.</li>
+<li>Privacy - local installation is very safe, everything is stored on your machine. Online privacy is unknown, i.e. we don’t know if they keep the reports or email it to someone -  we cannot prove it is 100% confidential. Most people tend to use online version, so your IP is not exposed.</li></ul>
+
+<h4>Burp</h4>
+<ul><li>Easy installation</li>
+<li>Ease of use - local certificate must be generated, imported into the browser you wish to use so that everything is cached on your machine. More for experienced users.</li>
+<li>Licensing - free and paid version (pro and enterprise). Pro is not very expensive, but the enterprise is very pricey.</li>
+<li>Privacy - the tool is installed on your machine, so as long as you keep your machine safe, the data is safe.</li></ul>
+
+<h4>OWASP</h4>
+<ul><li>Ease of install - easy</li>
+<li>Ease of use - easy to use.</li>
+<li>Flexibility - supports many OS. It is open source; developers can change the source code to suit their needs. Both manual and auto scanning allowed.</li>
+<li>Privacy - plugins may be unsecure, some code could be manipulated.</li>
+<li>https://www.peerspot.com/products/owasp-zap-reviews</li></ul>
+
+<h4>SQLmap</h4>
+<ul><li>Ease of use - Linux and need to know commands.</li>
+<li>Flexibility - it supports all types of databases, except non-SQL based.</li>
+<li>Licensing - open source</li>
+<li>Reputation - well reviewed in the IT community</li>
+<li>Privacy - open source, installed locally</li></ul>
+
+<h4>Kali linux</h4>
+<ul><li>Ease of install - Abidemi had issues installing it on her machine</li>
+<li>Ease of use - requires Linux command line use</li>
+<li>Flexibility - customizable, just not easy to do.</li>
+<li>Licensing - free, although some custom paid apps, but the main suite is free of charge.</li>
+<li>Privacy - it can come packed with viruses, worms, etc</li></ul>
+
+<h4>Jawfish</h4>
+<ul><li>Ease of use - python knowledge needed for some things, they do offer free training</li>
+<li>Flexibility - customisable with pyton</li>
+<li>Licensing - free</li>
+<li>Reputation - open source, fairly new, not as popular</li>
+<li>Privacy - open source, not much more known.</li></ul>
+
                     
-                    <p>During the Unit 3 we have been asked to perform quick individual scans on the website assigned to our team
- (Group 1): https://loadedwithstuff.co.uk/</p>
- 
-<p>Our team used a combination of traceroute, tracert, and tracepath to record the number of hops to our destination.
- The number varied between 10 and 15. The hop with the highest latency, presented itself between the middle and
-  the end of the traceroute, i.e. between hops 7 and 11 respectively. No lost packets were observed.  </p>
-<p>The differences in the hop numbers can be explained by our geographical locations (Fei et al, 1998) and our
- internet providers; our team members have conducted these scans from the UK, Canada, Qatar and Nigeria. 
- The latency differences will be due to the differences between our bandwidth.
-Next we were asked to find the mail and name servers for the domain. We used a combination of nslookup and 
-web-based tools to identify the name servers below. This indicated to us that the site is being hosted by A2 Hosting.</p>
-
-<ol><li>ns1.a2hosting.com</li>
-<li>ns2.a2hosting.com</li>
-<li>ns3.a2hosting.com</li>
-<li>ns4.a2hosting.com</li></ol>
-
-<p>The MX record for the assigned site was confirmed by everyone to be mail.loadedwithstuff.co.uk.</p>
-
-<p>Next we were asked to provide the registered contact for the domain. Again we used a combination of the whois 
-command and various web-based resources. We were able to confirm that the registrar for the site is:</p>
-
-<ul><li>eNom LLC [Tag = ENOM]</li>
-<li>URL: http://www.enom.com</li>
-</ul>
-<p>While contact information for domains used to be public information, this was changed as a result of the 
-introduction of the GDPR when the Internet Corporation for Assigned Names and Numbers (ICANN) agreed to 
-start treating this data as personal information that needs to be kept private (Goyal, 2018). </p>
-<p>The final part of the scan was to identify the physical location of the server hosting the site. Using a variety 
-of web-based IP address geolocation services, we initially suspected that the server was hosted in the USA.
- However, IP address geolocation is not always accurate, especially when considering addresses assigned to 
- Internet companies, which are free to assign their addresses without regard to geography (IPLocation, 2016).
-  With this in mind, we looked more closely at the network hops identified in our trace routes. These routes
-   all seemed to point to Amsterdam as the correct location. One of our group resides in North America, which
-    made their route particularly interesting; if the site was in the USA then their route should be quite short.
-     Instead, the route showed a trans-Atlantic hop from Montreal to Liverpool which would not have been necessary 
-     if the site was in the USA (Pepelnjak, 2019). Based on all of the evidence available, we concluded that the
-      hosting server is most likely located in Amsterdam.</p>
-<p>Difficulties experienced by the team members were also discussed during the team meeting, and it appears that
- most were due to the lack of hands-on network experience.</p>
- 
-<h4>References</h4>
-
-<p>Fei, A., Pei, G., Liu, R., Zhang, L. (1998) Measurements On Delay And Hop-Count Of The Internet. </p>
-<p>Goyal, V. (2018) How GDPR almost turned off WHOIS. Available at: https://www.linkedin.com/pulse/how-gdpr-almost-turned-off-whois-vivek-goyal/ [Accessed 3 April 2022].</p>
-<p>IPLocation. (2016) How accurate is IP-based Geolocation Lookup? Available at https://www.iplocation.net/geolocation-accuracy [Accessed 3 April 2022].</p>
-<p>Pepelnjak, I. (2019) BGP tutorial: How the routing protocol works. Available at https://www.techtarget.com/searchnetworking/feature/BGP-tutorial-The-routing-protocol-that-makes-the-Internet-work [Accessed 3 April 2022].</p>
-
-
+										
+										
+										
+										
                     
 								</div>
 
