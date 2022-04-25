@@ -125,152 +125,201 @@ the criteria grid (Module Resources). </p>
                   
 									<div class="box">
 										
-                    <h3>TEAM SCORES</h3>
+               <h3>Introduction</h3>
+<p>Loaded With Stuff! (loadedwithstuff.co.uk) is an e-commerce site offering two payment options: outright 
+purchases and ‘Easy Financing’ program. It targets customers looking for the newest technology from known brands.
+ In this report, the authors will describe the system, identify the security and privacy compliance requirements 
+ which apply to it, and provide a prioritised list of potential vulnerabilities and recommended mitigations.</p>
+ 
+<h3>System Description</h3>
 
-<table><tr><th>Tool</th>
-<th>Ease of install</th>
-<th>Ease of use</th>
-<th>Flexibility</th>
-<th>Licensing</th>
-<th>Reputation</th>
-<th>Privacy</th>
-<th>TOTAL</th>
-</tr>
-<tr><td>Metasploit</td>
-<td>5</td>
-<td>4</td>
-<td>4</td>
-<td>4</td>
-<td>4</td>
-<td>3</td>
-<td>24</td>
-</tr>
-<tr><td>Nessus Vulnerability Scanner</td>
-<td>4</td>
-<td>4</td>
-<td>4</td>
-<td>2</td>
-<td>4</td>
-<td>5</td>
-<td>23</td>
-</tr>
-<tr><td>Nmap</td>
-<td>5</td>
-<td>3</td>
-<td>3</td>
-<td>5</td>
-<td>5</td>
-<td>3</td>
-<td>24</td>
-</tr>
-<tr><td>Burp Suite</td>
-<td>5</td>
-<td>3</td>
-<td>4</td>
-<td>2</td>
-<td>5</td>
-<td>5</td>
-<td>24</td>
-</tr>
-<tr><td>OWASP ZAP</td>
-<td>5</td>
-<td>5</td>
-<td>5</td>
-<td>5</td>
-<td>5</td>
-<td>3</td>
-<td>28</td>
-</tr>
-<tr><td>SQLmap</td>
-<td>4</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
-<td>4</td>
-<td>4</td>
-<td>24</td>
-</tr>
-<tr><td>Kali Linux</td>
-<td>3</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
-<td>5</td>
-<td>3</td>
-<td>23</td>
-</tr>
-<tr><td>Jawfish</td>
-<td>5</td>
-<td>3</td>
-<td>3</td>
-<td>5</td>
-<td>3</td>
-<td>3</td>
-<td>22</td>
-</tr>
+<p>Loaded With Stuff! was built with the Softaculous automated deployment system and is based on Loaded Commerce
+ Community Edition v6.6. It is located at the A2 Web Hosting data centre in Amsterdam on a shared hosting 
+ server with IP address 68.66.247.187. The loadedwithstuff.co.uk domain name is registered through eNom LLC.</p>
+ 
+<p>The website collects and stores data, some of which is considered personal, to be able to process the orders,
+ such as: email address, delivery and billing addresses, phone numbers.</p>
+ 
+<p>The website does not handle or store any cardholder data (CHD) and the payment page has instead been outsourced 
+to a third party.</p>
+
+<p>The ‘Easy financing’ finance program appears to be outsourced to an external provider and, thus, it is out 
+of scope of this design document.</p>
+
+<h3>Governing Regulations</h3>
+
+<p>The Loaded with Stuff! website belongs to a UK domain; however, the web server is being hosted in 
+the Netherlands (Group 1, 2022). Thus, the governing bodies and the regulations from both the UK 
+and Netherlands were shortlisted as those applicable to the Loaded With Stuff! website:</p>
+
+										<h3>Security Vulnerabilities & Mitigations</h3>
+
+<p>The theoretical security vulnerabilities relevant to the above list of identified regulations have been 
+prepared using STRIDE methodology and can be viewed below, where each vulnerability has been assigned to a
+ STRIDE (Microsoft, 2022) category (Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service,
+  Elevation of Privilege) and ordered by business priority. The recommendations have also been prepared 
+  for each identified security weakness.</p>
+  
+<p>The hosting provider for the site, A2, provides a number of common security mitigations to all customers,
+ including DDoS protection, firewalls, brute force defense, and virus scanning (A2 Web Hosting, 2022).
+  These mitigations are not included in the table below as they are assumed to already be implemented.
+Business priority has been determined based on each vulnerability’s DREAD risk ranking (University of 
+Essex Online, 2022):</p>
+
+<ul><li>DREAD 0 (no risk), 1 (low risk) - low business priority.</li>
+<li>DREAD 2 (medium risk) - medium business priority.</li>
+<li>DREAD 3 (high risk) - high business priority.</li></ul>
+										
+										
+										<table><tr><th>STRIDE category</th>
+<th>Business priority</th>
+<th>Vulnerability description</th>
+<th>Recommendation</th></tr>
+
+<tr><td>Elevation of Privilege</td>
+<td>High</td>
+<td>GDPR, DPA. Weak default Softaculous admin password and username.
+
+When installing a new site, Softacolous sets default username to ‘Admin’ and the password is generated with capital letters, numbers and special characters (AuthorityRush, 2018).</td>
+
+<td>Update default username.
+
+Update default password to include lower case letters.</td></tr>
+
+
+
+<tr><td>Tampering, Denial of Service</td>
+<td>High</td>
+<td>PCI. Several open ports exposed on server (Lee, 2022).</td>
+<td>Close all not needed ports (Gelnaw, 2019).
+
+Switch to secure protocol formats (example, FTP to be switched to SFTP).
+
+Deploy the site behind a web application firewall (WAF).</td></tr>
+
+
+
+<tr><td>Tampering</td>
+<td>High</td>
+<td>GDPR, PCI. A06:2021-Vulnerable and Outdated Components 
+
+Site uses Loaded Commerce Community Edition 6.6, which does not appear to have been updated since 2018. Software is no longer being maintained, and Google (2022) considers the Loaded Commerce site to be “dangerous and deceptive”.</td>
+<td>Use an e-Commerce software product that is up to date and maintained by its vendor. Implement good patching processes (OWASP, 2022a).</td></tr>
+
+
+<tr><td>Tampering, Elevation of Privilege </td>
+<td>Medium</td>
+<td>PCI. Potential web server operating system exploits (Jackson, 2009).</td>
+<td>Follow a patch management process.
+
+Utilise a patch monitoring agent (manageEngine, 2022).</td></tr>
+
+
+<tr><td>Elevation of Privilege</td>
+<td>Medium</td>
+<td>GDPR, PCI. CVE-2020-26886: Local Privilege Escalation using softaculous/bin/soft.
+
+Site was deployed using Softaculous script and may be vulnerable to CVE-2020-26886.</td>
+<td>Update Softaculous to the latest version and implement good patching processes (NVD, 2022).</td></tr>
+
+
+
+<tr><td>Tampering, Spoofing, Repudiation</td>
+<td>Medium</td>
+<td>GDPR, DPA. Cross-Site Request Forgery (CSFR).
+
+The features allowing users to update their details and reset passwords may be vulnerable to this type of attack (OWASP, 2022b).</td>
+<td>Ensure the current website framework uses the latest Softaculous version which includes CSRF protection.
+
+Ensure the CRSF check is enabled by the ISP manager for the website (Mittal, 2019).</td></tr>
+
+
+<tr><td>Information Disclosure</td>
+<td>Medium</td>
+<td>GDPR, PCI. CVE-2014-5140. Site may be vulnerable to SQL injection (Mitre, 2014).</td>
+<td>Web application firewall is already deployed as part of A2 Web Hosting’s security package.
+
+Implement penetration testing to determine if the site is vulnerable (Breaking Technology, 2014).</td></tr>
+
+
+<tr><td>Spoofing</td>
+<td>Medium</td>
+<td>GDPR,PCI. Password policy is too weak.
+
+It allows sequential, repeated passwords and dictionary words.
+
+User accounts are not locked out after more than 10 failed login attempts.
+
+No multi factor authentication is enforced.
+
+Site will be vulnerable to a Brute force attack.</td>
+<td>Enforce strong password policy
+(Davin, 2020).</td></tr>
+
+
+<tr><td>Tampering</td>
+<td>Medium</td>
+<td>GDPR, PCI.
+A06-2021- Vulnerable and outdated components:
+
+Site uses PHP 7.3.33 which is end of life and does not support new security fixes.</td>
+
+
+<td>Upgrade the software
+(php.net/eol.php, 2022).</td></tr>
+
+
+<tr><td>Repudiation</td>
+<td>Low</td>
+<td></td>GDPR, DPA. Incorrectly configured logging level in the Softaculous Admin Panel may result in malicious actions not being tracked (Softaculous, 2022).
+<td>The correct logs must be set up for the website in the Softaculous Admin Panel (Musukama, 2022).</td></tr>
+
+
+<tr><td>Spoofing / Information Disclosure</td>
+<td>Low</td>
+<td>GDPR. Email Phishing. 
+
+The site does not use the domain to generate emails: the email ID is from a different domain.</td>
+<td>Use of the domain mail ID (example Support@loadedwithstuff.co.uk) instead of the current account that sends the registration information.
+
+Train staff to understand the risk of internal phishing, pretexting attacks.
+
+Implement spoofing protection mechanisms such as SPF or DMARC (Dmarcly, 2022).</td></tr>
 </table>
 
-<h4>Metasploit</h4>
-<ul><li>Easy to install (just lots of next for windows, and for kali linux it’s just a command line)</li>
-<li>Ease of use - you just call the function, set destination and the host</li>
-<li>Flexibility - scan, build virus, password crackers, DOS, etc. Supports many OS. High risk because it makes the machine vulnerable. </li>
-<li>Licensing - open source, some libraries or sources are inbuilt and they are sold on dark web. About 20-10% of libraries, sources are charged.</li>
-<li>Reputation - the tool is well known for a long time. It is good for offensive hacking/pen testing. The companies do not use it publicly as it’s a dangerous tool.</li>
-<li>Privacy - Hamad thinks that it is hard to prove that the software is not sharing any of your machine data during the scans. </li></ul>
-
-<h4>Nessus</h4>
-<ul><li>Ease of install - easy to install.</li>
-<li>Ease of use - you set up the host name/IP and scan.</li>
-<li>Flexibility - extra steps to go through if you have cloud deployments. It’s more difficult to customise</li>
-<li>Licensing - they charge, but they offer a trial month (with limited reports).</li>
-<li>Reputation - known tool. </li>
-<li>Privacy - privacy documents in place to ensure your data is secure.</li></ul>
-
-<h4>Nmap</h4>
-<ul><li>Ease of install - easy.</li>
-<li>Ease of use - CLI based, it’s harder to use because you need to know the commands.</li>
-<li>Flexibility - not customisable.</li>
-<li>Licensing - free.</li>
-<li>Reputation - very well know.</li>
-<li>Privacy - local installation is very safe, everything is stored on your machine. Online privacy is unknown, i.e. we don’t know if they keep the reports or email it to someone -  we cannot prove it is 100% confidential. Most people tend to use online version, so your IP is not exposed.</li></ul>
-
-<h4>Burp</h4>
-<ul><li>Easy installation</li>
-<li>Ease of use - local certificate must be generated, imported into the browser you wish to use so that everything is cached on your machine. More for experienced users.</li>
-<li>Licensing - free and paid version (pro and enterprise). Pro is not very expensive, but the enterprise is very pricey.</li>
-<li>Privacy - the tool is installed on your machine, so as long as you keep your machine safe, the data is safe.</li></ul>
-
-<h4>OWASP</h4>
-<ul><li>Ease of install - easy</li>
-<li>Ease of use - easy to use.</li>
-<li>Flexibility - supports many OS. It is open source; developers can change the source code to suit their needs. Both manual and auto scanning allowed.</li>
-<li>Privacy - plugins may be unsecure, some code could be manipulated.</li>
-<li>https://www.peerspot.com/products/owasp-zap-reviews</li></ul>
-
-<h4>SQLmap</h4>
-<ul><li>Ease of use - Linux and need to know commands.</li>
-<li>Flexibility - it supports all types of databases, except non-SQL based.</li>
-<li>Licensing - open source</li>
-<li>Reputation - well reviewed in the IT community</li>
-<li>Privacy - open source, installed locally</li></ul>
-
-<h4>Kali linux</h4>
-<ul><li>Ease of install - Abidemi had issues installing it on her machine</li>
-<li>Ease of use - requires Linux command line use</li>
-<li>Flexibility - customizable, just not easy to do.</li>
-<li>Licensing - free, although some custom paid apps, but the main suite is free of charge.</li>
-<li>Privacy - it can come packed with viruses, worms, etc</li></ul>
-
-<h4>Jawfish</h4>
-<ul><li>Ease of use - python knowledge needed for some things, they do offer free training</li>
-<li>Flexibility - customisable with pyton</li>
-<li>Licensing - free</li>
-<li>Reputation - open source, fairly new, not as popular</li>
-<li>Privacy - open source, not much more known.</li></ul>
-
-                    
 										
-										
+							
+<h3>Conclusion</h3>
+<p>E-commerce sites remain one of the most highly prized targets for cyber threats, with security incidents growing by 20% in 2021 (Webscale, 2021). In this paper, the authors have listed a number of potential security vulnerabilities faced by the Loaded With Stuff! Website. The paper further provides a prioritized list of mitigations which the operators of the site should consider in order to secure their site against cyber threats while maintaining compliance with their legal and regulatory obligations.</p>
+<h3>References</h3>
+<p>A2 Web Hosting. (2022) Secure hosting. Available from: https://www.a2hosting.co.uk/secure-hosting [Accessed 14 April 2022].</p>
+<p>AuhorityRush. (2018) Softaculous Wordpress Instals & The Security Risks You NEED to Know About. Available from: https://www.warriorforum.com/website-design/1323924-softaculous-wordpress-installs-security-risks-you-need-know-about.html [Accessed 12 April 2022].</p>
+<p>Breaking Technology. (2014). Why You Should Not Attempt to Re-invent PDO - Infosec Resources (2014). Available from: https://resources.infosecinstitute.com/topic/exploiting-systemic-query-vulnerabilities-attempt-re-invent-pdo/ [Accessed: 15 April 2022].</p>
+<p>Corey, D. (2020) Password Requirements – GDPR, ISO 27001/27002, PCI DSS, NIST 800-53. Available from: https://davintechgroup.com/toolkit/password-requirements-gdpr-iso-27001-27002-pci-dss-nist-800-53/ [Accessed 17 April 2022].</p>
+<p>php.net/eol.php. (2022). Unsupported branches Available from: https://www.php.net/eol.php [Accessed 17 April 2022].</p>
+<p>Dmarcly. (2022) How to Implement DMARC/DKIM/SPF to Stop Email Spoofing/Phishing: The Definitive Guide. Available from: https://dmarcly.com/blog/how-to-implement-dmarc-dkim-spf-to-stop-email-spoofing-phishing-the-definitive-guide [Accessed 17 April 2022].</p>
+<p>Glenaw ( 2019), Open port vulnerabilities whats the big deal ?. Available from: Open Port Vulnerabilities: What's the Big Deal? | Bitsight [ Accessed 17 April 2022].</p>
+<p>Group 1 (2022). Initial post. Available from: https://www.my-course.co.uk/mod/hsuforum/discuss.php?d=303719 [Accessed 10 April 2022].</p>
+<p>Google (2022) Manage warnings about unsafe sites. Available from: https://support.google.com/chrome/answer/99020?hl=en&co=GENIE.Platform%3DAndroid [Accessed 17 April 2022].</p>
+<p>ico. (2022) Guide to the UK General Data Projection Regulation (UK GDPR). Available from: https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/ [Accessed 10 April 2022].</p>
+<p>ico. (2022) What are PECR? Available from: https://ico.org.uk/for-organisations/guide-to-pecr/what-are-pecr/ [Accessed 10 April 2022].</p>
+<p>Jackson, W. (2009) Unpatched applications on Web servers, clients are weakest links in cybersecurity. Available from: https://gcn.com/cloud-infrastructure/2009/09/unpatched-applications-on-web-servers-clients-are-weakest-links-in-cybersecurity/300443/ [Accessed 17 April 2022].</p>
+<p>Lee, B. (2022) Open ports and their vulnerabilities. Available from: https://specopssoft.com/blog/open-ports-and-their-vulnerabilities/ [Accessed 17 April 2022].</p>
+<p>ManageEngine. (2022) What is patch management? Available from: https://www.manageengine.com/patch-management/what-is-patch-management.html [Accessed 17 April 2022].</p>
+<p>Microsoft (2022) Microsoft Threat Modelling tool threats. Available from: https://docs.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-threats [Accessed 11 April 2022].</p>
+<p>Mitre. (2014). CVE-2014-5140. Available from: http://cve.mitre.org/cgi-bin/cvename.cgi?name=2014-5140 [Accessed 17 April 2022].</p>
+<p>Mittal, P (2019) Softaculous 5.2.3 Released. Available from: https://www.softaculous.com/news/softaculous/softaculous-5-2-3-released-18187.html [Accessed 12 April 2022].</p>
+<p>Musukama, M. (2022) Best tips for monitoring and filtering web server logs. Available from: https://www.papertrail.com/solution/tips/best-tips-for-monitoring-and-filtering-your-web-server-logs/#:~:text=Server%20logs%20are%20important%20and%20can%20never%20be,is%20coming%20from%20and%20solve%20it%20on%20time [Accessed 17 April 2022].</p>
+<p>NVD. (2022). Available from: https://nvd.nist.gov/vuln/detail/CVE-2020-26886 [Accessed: 15 April 2022].</p>
+<p>OWASP (2022) A06 Vulnerable and Outdated Components - OWASP Top 10:2021. Available from: https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/ [Accessed: 15 April 2022].</p>
+<p>OWASP (2022) Cross Site Request Forgery. Available from: https://owasp.org/www-community/attacks/csrf [Accessed 12 April 2022].</p>
+<p>PCI Security Standards Council. (2014) Payment Card Industry (PCI) Data Security Standard: Self-Assessment Questionnaire A and Attestation of Compliance. Available from: https://www.pcisecuritystandards.org/documents/SAQ_A_v3.pdf [Accessed 10 April 2022].</p>
+<p>reciteme (2020) Understanding the Equality Act and Website Accessibility. Available from: https://reciteme.com/news/understanding-the-equality-act-and-website-accessibility [Accessed 10 April 2022].</p>
+<p>Softaculous. (2022) Softaculous Logs Admin Panel. Available from: https://softaculous.com/wiki/index.php/Softaculous_Logs_Admin_Panel [Accessed 12 April 2022].</p>
+<p>The Redscan Team (2021) What are PECR? Securing electronic communications in line with the latest requirements. Available from: https://www.redscan.com/news/what-are-the-pecr/ [Accessed 10 April 2022].</p>
+<p>University of Essex Online. (2022) Lecturecast: History & Definitions. Network and Information Security Management March 2022 A. University of Essex Online.</p>
+<p>Van Dam, C., Janssen, J. (2021) Netherlands – Data Protection Overview. Available from: https://www.dataguidance.com/notes/netherlands-data-protection-overview [Accessed 10 April 2022].</p>
+<p>Webscale. (2021) The Global Ecommerce Security Report. Available from: https://www.webscale.com/wp-content/uploads/2021/02/Global-Ecommerce-Security-Report-2021.pdf [Accessed 17 April 2022].</p>
 										
 										
                     
@@ -279,30 +328,36 @@ the criteria grid (Module Resources). </p>
 								<h2>Reflections</h2>
 									<div class="box">
 									
-									<p>In the collaborative discussion, I started to lose my patience a bit. Our group was the only group who
-correctly (in my not-so-humble opinion) located the server. Yet the responses that we recieved to our
-post just questioned our conclusion. It brought to mind that cognitive bias where you latch on to the first
-bit of information you read, even if that information is wrong. And if it is wrong, it will take a mountain
-of evidence to convince you. You can't escape cognitive biases; they are innate. I am full of them.
-But you can try to lower the impact of them by realizing when you have gotten trapped by one. So I decided
-to make a post to that effect.</p>
+									<p>This was not my finest week, at least not in the collaborative discussion. As I mentioned last week, 
+I was losing patience a bit and this week I clearly lost it. </p>
 
-<p>For our seminar prep this week, we had to read up on and rate penetration testing tools. I have used most
-of these tools at one time or another in the past, so this was a refresher for me. We also continued working
-on our unit 6 design document. We have many pages of raw notes, and have a skeleton for the final deliverable.
-We have agreed that we will all contribute 3 vulnerabilties to the document, and then we can pare them
-down based on word count.</p>
+<p>I stand by the premise of my summary post, which is that cyber attackers often employ stealth and
+ redirection in order to obfuscate their origins and hide their tracks, and therefore cybersecurity
+  biases are getting in their way. However I was feeling rushed and stressed-out, and did not think
+   through how I should communicate these thoughts. What came out was condescending and insulting,
+    and I was mortified when I re-read it the next day.</p>
 
-<h4>Technical Challenges Update
-</h4>
-<p>There was no way that I was going to hand-code all of the HTML tags required for the table and all of the 
-bulleted lists in this post. I had to find something. And I found it! It is a lightweight text editor
-called Bluefish. It allows you to just highlight some text, and click a button to add tags around the text.
-It is not the ideal solution, but it is the best one I have found so far.
-</p>
-<p>I am still struggling with the auto citation generator.</p>
+<p>I hate making excuses for myself, but I do think it is fair to point out that I am feeling under a 
+lot of pressure right now. Also, at the risk of being TMI, I am into month four of transgender hormone 
+replacement therapy, and my emotions are a complete rollercoaster ride. Transitioning while working
+ full-time and taking a postgraduate degree was not the best idea. Although, to be fair, when I started
+  working on applying for this program last June, I had no intention of transitioning. That only happened
+   after intense therapy in the early fall, after I had already gotten funding and been accepted into the
+    program. Going forward, I think I just need to check myself more, especially when posting in collaborative
+     discussions.</p>
 
-	
+<p>The better news this week is that we completed our team design document assignment. It took a marathon
+Zoom collaboration session on Sunday, but I feel like we did a pretty good job overall. The hardest part 
+of this was completing the peer review. I was a bit disappointed that some of the team members were not
+ contributing as much as the rest. For instance, we had all agreed that we would each contribute 3 vulnerabilities
+  to the report and would then pare them down based on the word count. That should have given us 15 vulnerabilities 
+  to work with, but we only had 10 and it was clear that at least one person had not contributed any data.
+   I ended up looking through the edit history in Google Docs to see who had contributed what to the document
+    and based my peer reviews largely on that.</p>
+
+<p>Anyway, we’re now passed the half-way point in this course, so must keep working away!</p>
+
+
 										
 										
 									</div>
