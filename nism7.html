@@ -75,8 +75,70 @@
 									</div>
                   
                   
+									<h2>Scanning Exercise and Collaborative Learning Wiki</h2>
 
+<p>Perform scans against your assigned website using the tools available in Kali Linux. Answer as many of the following questions as you can:</p>
+
+<ul><li>What Operating System does the web site utilise?</li>
+<li>What web server software is it running?</li>
+<li>Is it running a CMS (Wordpress, Drupal, etc?)</li>
+<li>What protection does it have (CDN, Proxy, Firewall?)</li>
+<li>Where is it hosted?</li>
+<li>Does it have any open ports?</li>
+<li>Does the site have any known vulnerabilities?</li>
+<li>What versions of software is it using? Are these patched so that they are up to date?</li></ul>
 									
+						<div class="box">			
+									
+								<p>All scans were done using Kali Linux in a VirtualBox machine, and with ProtonVPN.</p>
+
+<h3>What Operating System does the web site utilise?</h3>
+
+<p>I initially tried using the p0f utility, but it was unable to determine the OS.</p>
+
+<p>nmap -O reports:</p>
+
+<p>Aggressive OS guesses: Linux 4.15 - 5.6 (90%), Linux 5.0 (90%), Linux 5.0 - 5.4 (90%), Linux 5.3 - 5.4 (89%), Linux 2.6.32 (89%), Linux 5.0 - 5.3 (89%), Linux 5.4 (88%), Linux 3.1 (88%), Linux 3.2 (88%), AXIS 210A or 211 Network Camera (Linux 2.6.17) (88%)</p>
+
+<h3>What web server software is it running?</h3>
+
+<p>whatweb reports that the server is running Apache. According to A2 Hosting (2022), their shared hosting servers run Apache 2.4.</p>
+
+<h3>Is it running a CMS (Wordpress, Drupal, etc?)</h3>
+
+<p>Viewing the page source for the home page shows:</p>
+
+<p>\<meta name="generator" content="Loaded Commerce Community Edition v6.6"\></p>
+
+<p>whatweb reports that the site is using "Loaded Commerce 6.6  - Powerful Ecommerce Shopping Cart]"</p>
+
+<p>Loaded Commerce is a shopping cart / e-commerce platform, which has much the same features as a CMS. (BigCommerce, 2021).</p>
+
+<h3>What protection does it have (CDN, Proxy, Firewall?)</h3>
+
+<p>Nikto reports: "+ Server banner has changed from 'Apache' to 'imunify360-webshield/1.18' which may suggest a WAF, load balancer or proxy is in place"</p>
+
+<p>A2 Hosting (2022) reports that it provides “perpetual security” including:</p>
+
+<ul><li>Daily malware scans</li>
+<li></li>Immunify360 suite
+<li>Patching</li>
+<li>DDoS protection</li>
+<li>Hackscan</li>
+<li>Brute force defense</li>
+<li>Dual firewall</li></ul>
+
+<h3>Where is it hosted?</h3>
+
+<p>Our group has already reported that the server is located in Amsterdam, The Netherlands (My-course.co.uk., 2022).</p>
+
+<h3>Does it have any open ports?</h3>
+
+<p>nmap reports several thousand open ports. However this may be part of A2 Hosting's security configuration. </p>
+
+	
+
+								</div>	
 								<h2>Reflections</h2>
 									<div class="box">
 									
